@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master_page.master.cs" Inherits="Regestration_DEMO.Site1.master_page" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width:90%">
+                            <label style="font-size:60px;" OnClick=" OnHome_Click"> Wildsnap</label>
+                        </td>
+                        <td>
+                            <asp:ImageButton ID="Profile_Button" runat="server" ImageUrl="~/assets/images/acc_logo.png" Height="50px" Width="50px" OnClick="Profile_Button_Click" />
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Site1/ad.xml" />
+                    </td>
+
+                    <td style="width:99%"> 
+                       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                       </asp:ContentPlaceHolder>
+                    </td>
+
+                    <td>
+                        <asp:AdRotator ID="AdRotator2" runat="server" AdvertisementFile="~/Site1/ad.xml" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+    </form>
+</body>
+</html>
