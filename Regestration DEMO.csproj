@@ -123,8 +123,8 @@
     <Content Include="assets\images\png_applogo.png" />
     <Content Include="assets\images\png_logo.png" />
     <Content Include="auth\404.html" />
-    <Content Include="auth\404\index.html" />
-    <Content Include="auth\404\style.css" />
+    <Content Include="auth\errors\index.html" />
+    <Content Include="auth\errors\style.css" />
     <Content Include="auth\login.aspx" />
     <Content Include="auth\signup.aspx" />
     <Content Include="Contact.aspx" />

@@ -26,6 +26,7 @@
                     <br/>
                     <asp:TextBox ID="TextBox_pwd" runat="server" Height="16px" Width="202px" TextMode="Password"></asp:TextBox>
                     <br />
+                    <asp:Label ID="Label_auth" runat="server" ForeColor="#FF3300"></asp:Label>
                     <br />
                     <asp:Button ID="Button_signin" runat="server" Text="Sign In" BackColor="Green" OnClick="Button_signin_Click"  />
                 </div>

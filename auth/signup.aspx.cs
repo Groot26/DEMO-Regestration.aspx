@@ -24,6 +24,8 @@ namespace WildForm
             con.Open();
             dataEntry.ExecuteNonQuery();
             con.Close();
+            Session["LoggedIn"] = "1";
+            Session["uname"] = TextBox_username.Text;
             Response.Redirect("~/Site1/homePage.aspx");
         }
     }

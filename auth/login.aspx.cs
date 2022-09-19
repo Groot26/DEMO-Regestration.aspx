@@ -25,32 +25,44 @@ namespace WildForm
         protected void Button_signin_Click(object sender, EventArgs e)
         {
 
-            Session["LoggedIn"] = "1";
-            SqlCommand authenticate = new SqlCommand("select * from data where Username='"+TextBox_username.Text+"' and Password='"+TextBox_pwd.Text+"'", con);
-            //SqlDataAdapter sda = new SqlDataAdapter(authenticate);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
-            //int c = dt.Columns.IndexOf("Username");
-            con.Open();
-            SqlDataReader sdr = authenticate.ExecuteReader();
+            if (TextBox_username.Text == "Admin" && TextBox_pwd.Text == "admin")
             {
-                sdr.Read();
-                if (sdr["Username"].ToString() == null)
-                    Response.Write("Username is Incorrect");
-
-                else if (sdr["Password"].ToString() == null)
-                    Response.Write("Password is Incorrect");
-
-                else
-                {
-                    Session["uname"] = sdr["Username"].ToString();
-                    Session["pwd"] = sdr["Password"].ToString();
-                    Response.Redirect("~/Site1/homePage.aspx");
-                    
-                }
+                //new admin view
             }
-            con.Close();
-            
+            else
+            {
+                SqlCommand authenticate = new SqlCommand("select * from data where Username='" + TextBox_username.Text + "' and Password='" + TextBox_pwd.Text + "'", con);
+                con.Open();
+                SqlDataReader sdr = authenticate.ExecuteReader();
+                {
+                    sdr.Read();
+
+                    if (sdr.HasRows)
+                    {
+                        Session["LoggedIn"] = "1";
+                        Session["uname"] = sdr["Username"].ToString();
+                        Response.Redirect("~/Site1/homePage.aspx");
+                    }
+                    else
+                        Label_auth.Text = ("Username Password is Incorrect");
+
+
+                    /*if (sdr["Username"] == null)
+                        Response.Write("Username is Incorrect");
+
+                    else if (sdr["Password"] == null)
+                        Response.Write("Password is Incorrect");
+
+                    else
+                    {
+                        Session["uname"] = sdr["Username"].ToString();
+                        Session["pwd"] = sdr["Password"].ToString();
+                        Response.Redirect("~/Site1/homePage.aspx");
+
+                    }*/
+                }
+                con.Close();
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Regestration_DEMO.Site1
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["LoggedIn"] == null)
-                Response.Redirect("~/auth/404/index.html");
+                Response.Redirect("~/auth/errors/index.html");
             
             else
             {
@@ -40,7 +40,7 @@ namespace Regestration_DEMO.Site1
 
         protected void Button_update_Click(object sender, EventArgs e)
         {
-            SqlCommand update = new SqlCommand("update data Set Name ='" + TextBox_name + "', Email ='" + TextBox_email + "', Number ='" + TextBox_number + "', Age ='" + TextBox_age + "', DOB ='" + Convert.ToDateTime(TextBox_dob.Text).ToString("MM/dd/yyyy") + "', Username ='" + TextBox_username + "', Password ='" + TextBox_pwd + "' where Username ='" + Session["uname"].ToString() + "' ", con);
+            SqlCommand update = new SqlCommand("UPDATE data SET Name ='" + TextBox_name.Text + "', Email ='" + TextBox_email.Text + "', Number ='" + TextBox_number.Text + "', Age ='" + TextBox_age.Text + "', DOB ='" + Convert.ToDateTime(TextBox_dob.Text).ToString("MM/dd/yyyy") + "', Username ='" + TextBox_username.Text + "', Password ='" + TextBox_pwd.Text + "' where Username = '"+  TextBox_username.Text /*Session["uname"].ToString()*/ +"' ", con);
             con.Open();
             update.ExecuteNonQuery();
             con.Close();
@@ -57,6 +57,7 @@ namespace Regestration_DEMO.Site1
         protected void Button_logout_Click(object sender, EventArgs e)
         {
             Session.Abandon();
+            Session.RemoveAll();
             Response.Redirect("~/auth/login.aspx");
         }
     }

@@ -60,6 +60,15 @@ namespace WildForm
         protected global::System.Web.UI.WebControls.TextBox TextBox_pwd;
 
         /// <summary>
+        /// Label_auth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_auth;
+
+        /// <summary>
         /// Button_signin control.
         /// </summary>
         /// <remarks>
