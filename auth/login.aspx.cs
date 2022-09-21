@@ -25,12 +25,7 @@ namespace WildForm
         protected void Button_signin_Click(object sender, EventArgs e)
         {
 
-            if (TextBox_username.Text == "Admin" && TextBox_pwd.Text == "admin")
-            {
-                //new admin view
-            }
-            else
-            {
+           
                 SqlCommand authenticate = new SqlCommand("select * from data where Username='" + TextBox_username.Text + "' and Password='" + TextBox_pwd.Text + "'", con);
                 con.Open();
                 SqlDataReader sdr = authenticate.ExecuteReader();
@@ -41,28 +36,21 @@ namespace WildForm
                     {
                         Session["LoggedIn"] = "1";
                         Session["uname"] = sdr["Username"].ToString();
-                        Response.Redirect("~/Site1/homePage.aspx");
+                        Session["pwd"] = sdr["Password"].ToString();
+
+                    if (Session["uname"].ToString() == "admin")
+                        {
+                            Response.Redirect("~/admin/adminPage.aspx");
+                        }
+                        else
+                            Response.Redirect("~/Site1/homePage.aspx");
                     }
                     else
                         Label_auth.Text = ("Username Password is Incorrect");
 
-
-                    /*if (sdr["Username"] == null)
-                        Response.Write("Username is Incorrect");
-
-                    else if (sdr["Password"] == null)
-                        Response.Write("Password is Incorrect");
-
-                    else
-                    {
-                        Session["uname"] = sdr["Username"].ToString();
-                        Session["pwd"] = sdr["Password"].ToString();
-                        Response.Redirect("~/Site1/homePage.aspx");
-
-                    }*/
                 }
                 con.Close();
-            }
+            
         }
     }
 }

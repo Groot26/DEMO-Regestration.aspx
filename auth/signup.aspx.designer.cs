@@ -132,33 +132,6 @@ namespace WildForm
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_age;
 
         /// <summary>
-        /// Label_dob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_dob;
-
-        /// <summary>
-        /// TextBox_dob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_dob;
-
-        /// <summary>
-        /// RequiredFieldValidator_dob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_dob;
-
-        /// <summary>
         /// Label_username control.
         /// </summary>
         /// <remarks>

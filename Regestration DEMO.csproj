@@ -106,11 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="admin\adminPage.aspx" />
+    <Content Include="admin\adminProfile.aspx" />
     <Content Include="App_Data\userDatebase.mdf" />
     <Content Include="App_Data\userDatebase_log.ldf">
       <DependentUpon>userDatebase.mdf</DependentUpon>
     </Content>
-    <Content Include="assets\images\acc_logo.png" />
     <Content Include="assets\images\ads\ad1.jpg" />
     <Content Include="assets\images\ads\ad2.jpg" />
     <Content Include="assets\images\ads\ad3.jpg" />
@@ -120,13 +121,15 @@
     <Content Include="assets\images\cat\cat2.jfif" />
     <Content Include="assets\images\cat\cat3.jfif" />
     <Content Include="assets\images\cat\cat4.jfif" />
+    <Content Include="assets\images\ic_account.png" />
     <Content Include="assets\images\png_applogo.png" />
     <Content Include="assets\images\png_logo.png" />
-    <Content Include="auth\404.html" />
-    <Content Include="auth\errors\index.html" />
-    <Content Include="auth\errors\style.css" />
+    <Content Include="assets\images\WildSnapText.png" />
+    <Content Include="auth\index.html" />
     <Content Include="auth\login.aspx" />
+    <Content Include="auth\script.js" />
     <Content Include="auth\signup.aspx" />
+    <Content Include="auth\style.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -184,6 +187,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\adminPage.aspx.cs">
+      <DependentUpon>adminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminPage.aspx.designer.cs">
+      <DependentUpon>adminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adminProfile.aspx.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminProfile.aspx.designer.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>

@@ -7,21 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Regestration_DEMO.Site1
+namespace Regestration_DEMO.admin
 {
 
 
-    public partial class master_page
+    public partial class adminProfile
     {
-
-        /// <summary>
-        /// head control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
         /// form1 control.
@@ -33,48 +24,57 @@ namespace Regestration_DEMO.Site1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Wildsnap control.
+        /// Label_adminPWD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Wildsnap;
+        protected global::System.Web.UI.WebControls.Label Label_adminPWD;
 
         /// <summary>
-        /// Profile_Button control.
+        /// TextBox_pwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Profile_Button;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_pwd;
 
         /// <summary>
-        /// AdRotator1 control.
+        /// Button_update control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.AdRotator AdRotator1;
+        protected global::System.Web.UI.WebControls.Button Button_update;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// Label_confirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label Label_confirm;
 
         /// <summary>
-        /// AdRotator2 control.
+        /// Button_home control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.AdRotator AdRotator2;
+        protected global::System.Web.UI.WebControls.Button Button_home;
+
+        /// <summary>
+        /// Button_logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_logout;
     }
 }

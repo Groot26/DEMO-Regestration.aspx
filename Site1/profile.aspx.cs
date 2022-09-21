@@ -14,8 +14,9 @@ namespace Regestration_DEMO.Site1
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=G:\.net projects\Regestration DEMO\App_Data\userDatebase.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["LoggedIn"] == null)
-                Response.Redirect("~/auth/errors/index.html");
+                Response.Redirect("~/auth/index.html");
             
             else
             {
@@ -29,7 +30,6 @@ namespace Regestration_DEMO.Site1
                     TextBox_email.Text = sdr["Email"].ToString();
                     TextBox_number.Text = sdr["Number"].ToString();
                     TextBox_age.Text = sdr["Age"].ToString();
-                    TextBox_dob.Text = Convert.ToDateTime(sdr["DOB"]).ToString("dd/MM/yyyy");
                     TextBox_username.Text = sdr["Username"].ToString();
                     TextBox_pwd.Text = sdr["Password"].ToString();
                 }
@@ -40,18 +40,19 @@ namespace Regestration_DEMO.Site1
 
         protected void Button_update_Click(object sender, EventArgs e)
         {
-            SqlCommand update = new SqlCommand("UPDATE data SET Name ='" + TextBox_name.Text + "', Email ='" + TextBox_email.Text + "', Number ='" + TextBox_number.Text + "', Age ='" + TextBox_age.Text + "', DOB ='" + Convert.ToDateTime(TextBox_dob.Text).ToString("MM/dd/yyyy") + "', Username ='" + TextBox_username.Text + "', Password ='" + TextBox_pwd.Text + "' where Username = '"+  TextBox_username.Text /*Session["uname"].ToString()*/ +"' ", con);
+            SqlCommand update = new SqlCommand("update data set Name = '"+TextBox_name.Text+"', Email = '"+TextBox_email.Text+"', Number = '"+ Convert.ToInt32(TextBox_number.Text)+"', Age = '"+Convert.ToInt32(TextBox_age.Text)+"', Password = '"+TextBox_pwd.Text+ "' where Username='" + Session["uname"].ToString() + "'  ", con);
             con.Open();
             update.ExecuteNonQuery();
             con.Close();
             GridView1.DataBind();
             Label_updateSucess.Text = ("Update Sucessfull");
+            update.Dispose();
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button_home_Click(object sender, EventArgs e)
         {
-
             Response.Redirect("homePage.aspx");
+
         }
 
         protected void Button_logout_Click(object sender, EventArgs e)
@@ -59,6 +60,19 @@ namespace Regestration_DEMO.Site1
             Session.Abandon();
             Session.RemoveAll();
             Response.Redirect("~/auth/login.aspx");
+        }
+
+        protected void Button_delete_Click(object sender, EventArgs e)
+        {
+            SqlCommand delete = new SqlCommand("DELETE FROM data where Username = '" +  Session["uname"].ToString() + "' ", con);
+            con.Open();
+            delete.ExecuteNonQuery();
+            con.Close();
+            Session.Abandon();
+            Session.RemoveAll();
+            delete.Dispose();
+            Response.Redirect("~/auth/login.aspx");
+
         }
     }
 }

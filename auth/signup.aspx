@@ -57,15 +57,6 @@
                 </tr>
 
                 <tr>
-                    <td><asp:Label ID="Label_dob" runat="server" Text="Enter DOB :" Font-Size="X-Large"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBox_dob" runat="server" TextMode="Date"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_dob" runat="server" ErrorMessage="Required DOB" ControlToValidate="TextBox_dob" ForeColor="#FF3300" Font-Size="Medium"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
                     <td><asp:Label ID="Label_username" runat="server" Text="Set UserName :" Font-Size="X-Large"></asp:Label></td>
                     <td><asp:TextBox ID="TextBox_username" runat="server"></asp:TextBox></td>
                 </tr>

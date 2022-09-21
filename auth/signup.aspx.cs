@@ -20,7 +20,7 @@ namespace WildForm
         protected void Button_submit_Click(object sender, EventArgs e)
         {
             
-            SqlCommand dataEntry = new SqlCommand("insert into data values('"+TextBox_name.Text+ "','" + TextBox_email.Text + "','" + Convert.ToInt32(TextBox_number.Text) + "','" + Convert.ToInt32(TextBox_age.Text) + "','"+ Convert.ToDateTime(TextBox_dob.Text).ToString("MM/dd/yyyy") + "','" + TextBox_username.Text + "','" + TextBox_pwd.Text + "') ", con);
+            SqlCommand dataEntry = new SqlCommand("insert into data values('"+TextBox_name.Text+ "','" + TextBox_email.Text + "','" + Convert.ToInt32(TextBox_number.Text) + "','" + Convert.ToInt32(TextBox_age.Text) + "','" + TextBox_username.Text + "','" + TextBox_pwd.Text + "') ", con);
             con.Open();
             dataEntry.ExecuteNonQuery();
             con.Close();

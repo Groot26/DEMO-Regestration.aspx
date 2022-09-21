@@ -14,11 +14,11 @@
             <div>
                 <table style="width: 100%;">
                     <tr>
-                        <td style="width:90%">
-                            <label style="font-size:60px;" OnClick=" OnHome_Click"> Wildsnap</label>
+                        <td style="width:99%">
+                            <asp:ImageButton ID="Wildsnap" runat="server" src="../assets/images/WildSnapText.png"  height="50" width="240" OnClick="Wildsnap_Click"  />
                         </td>
                         <td>
-                            <asp:ImageButton ID="Profile_Button" runat="server" ImageUrl="~/assets/images/acc_logo.png" Height="50px" Width="50px" OnClick="Profile_Button_Click" />
+                            <asp:ImageButton ID="Profile_Button" runat="server" ImageUrl="~/assets/images/ic_account.png" Height="60px" Width="60px" OnClick="Profile_Button_Click" />
                         </td>
                     </tr>
                 </table>

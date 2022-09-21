@@ -13,14 +13,15 @@ namespace Regestration_DEMO.Site1
         {
 
         }
-        protected void OnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("homePage.aspx");
-        }
 
         protected void Profile_Button_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("profile.aspx");
+            Response.Redirect("~/Site1/profile.aspx");
+        }
+
+        protected void Wildsnap_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("homePage.aspx");
         }
     }
 }

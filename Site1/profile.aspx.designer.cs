@@ -87,24 +87,6 @@ namespace Regestration_DEMO.Site1
         protected global::System.Web.UI.WebControls.TextBox TextBox_age;
 
         /// <summary>
-        /// Label_dob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_dob;
-
-        /// <summary>
-        /// TextBox_dob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_dob;
-
-        /// <summary>
         /// Label_username control.
         /// </summary>
         /// <remarks>
@@ -159,22 +141,22 @@ namespace Regestration_DEMO.Site1
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// SqlUserData control.
+        /// SqlDataSourceUserData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlUserData;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceUserData;
 
         /// <summary>
-        /// Button1 control.
+        /// Button_home control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button_home;
 
         /// <summary>
         /// Button_logout control.
@@ -184,6 +166,15 @@ namespace Regestration_DEMO.Site1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_logout;
+
+        /// <summary>
+        /// Button_delete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_delete;
 
         /// <summary>
         /// Button_update control.
