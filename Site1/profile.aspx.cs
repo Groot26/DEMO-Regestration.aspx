@@ -20,27 +20,30 @@ namespace Regestration_DEMO.Site1
             
             else
             {
-                SqlCommand bio = new SqlCommand("select * from data where Username='" + Session["uname"].ToString() + "'", con);
-
-                con.Open();
-                SqlDataReader sdr = bio.ExecuteReader();
+                if (!IsPostBack)
                 {
-                    sdr.Read();
-                    TextBox_name.Text = sdr["Name"].ToString();
-                    TextBox_email.Text = sdr["Email"].ToString();
-                    TextBox_number.Text = sdr["Number"].ToString();
-                    TextBox_age.Text = sdr["Age"].ToString();
-                    TextBox_username.Text = sdr["Username"].ToString();
-                    TextBox_pwd.Text = sdr["Password"].ToString();
+                    SqlCommand bio = new SqlCommand("select * from data where Username='" + Session["uname"].ToString() + "'", con);
+
+                    con.Open();
+                    SqlDataReader sdr = bio.ExecuteReader();
+                    {
+                        sdr.Read();
+                        TextBox_name.Text = sdr["Name"].ToString();
+                        TextBox_email.Text = sdr["Email"].ToString();
+                        TextBox_number.Text = sdr["Number"].ToString();
+                        TextBox_age.Text = sdr["Age"].ToString();
+                        TextBox_username.Text = sdr["Username"].ToString();
+                        TextBox_pwd.Text = sdr["Password"].ToString();
+                    }
+                    con.Close();
                 }
-                con.Close();
             }
 
         }
 
         protected void Button_update_Click(object sender, EventArgs e)
         {
-            SqlCommand update = new SqlCommand("update data set Name = '"+TextBox_name.Text+"', Email = '"+TextBox_email.Text+"', Number = '"+ Convert.ToInt32(TextBox_number.Text)+"', Age = '"+Convert.ToInt32(TextBox_age.Text)+"', Password = '"+TextBox_pwd.Text+ "' where Username='" + Session["uname"].ToString() + "'  ", con);
+            SqlCommand update = new SqlCommand("update data set Name = '"+TextBox_name.Text+"', Email = '"+TextBox_email.Text+"', Number = "+ Convert.ToInt32(TextBox_number.Text)+", Age = "+Convert.ToInt32(TextBox_age.Text)+", Password = '"+TextBox_pwd.Text+ "' where Username='" + Session["uname"].ToString() + "'", con);
             con.Open();
             update.ExecuteNonQuery();
             con.Close();

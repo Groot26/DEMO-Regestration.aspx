@@ -28,5 +28,30 @@ namespace WildForm
             Session["uname"] = TextBox_username.Text;
             Response.Redirect("~/Site1/homePage.aspx");
         }
+
+        protected void TextBox_username_TextChanged(object sender, EventArgs e)
+        {
+            SqlCommand checkUN = new SqlCommand("select * from data where Username='" + TextBox_username.Text + "' ", con);
+            con.Open();
+            SqlDataReader sdr = checkUN.ExecuteReader();
+            {
+                sdr.Read();
+
+                if (sdr.HasRows)
+                {
+                    Label_checkUN.ForeColor = System.Drawing.Color.Red;
+                    Label_checkUN.Text = "Username Already Exist!!";
+                    Button_submit.Enabled = false;
+                }
+                else
+                {
+                    Label_checkUN.ForeColor = System.Drawing.Color.Green;
+                    Label_checkUN.Text = "UserName Available";
+                    Button_submit.Enabled = true;
+
+                }
+            }
+            con.Close();
+        }
     }
 }

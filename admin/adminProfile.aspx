@@ -15,9 +15,9 @@
 
 <body>
     <form id="form1" runat="server">
-        
+
+        <center>
         <div style=" height:250px; width: 90%; padding: 10px; border: 1px solid black; margin: 0; ">
-            <center>
             <table style="width:auto;">
                 <tr>
                     <td>
@@ -37,17 +37,21 @@
                     </td>
                 </tr>
             </table>
-            </center>
         </div>
+        </center>
 
         <table style="width: 100%;">
             <tr>
                 <td>
+                    <center>
                     <asp:Button ID="Button_home" runat="server" Text="Home" CssClass="largeButton" OnClick="Button_home_Click" />
+                    </center>
                 </td>
                 <td>
+                    <center>
                     <asp:Button ID="Button_logout" runat="server" Text="Logout" CssClass="largeButton" OnClick="Button_logout_Click" />
-                </td>
+                    </center>
+                 </td>
                 
             </tr>
         </table>

@@ -58,11 +58,12 @@
 
                 <tr>
                     <td><asp:Label ID="Label_username" runat="server" Text="Set UserName :" Font-Size="X-Large"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBox_username" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="TextBox_username" runat="server" OnTextChanged="TextBox_username_TextChanged" AutoPostBack="True"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_username" runat="server" ErrorMessage="Required UserName" ControlToValidate="TextBox_username" ForeColor="#FF3300" Font-Size="Medium"></asp:RequiredFieldValidator>
+                        <asp:Label ID="Label_checkUN" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -83,7 +84,7 @@
             <table style="width: 100%;">
                 <tr>
                     <td style="width:60%">&nbsp;</td>
-                    <td > <asp:Button ID="Button_submit" runat="server" Text="SUBMIT"  BackColor="Green" Height="30px" Width="127px" OnClick="Button_submit_Click"  /></td>
+                    <td > <asp:Button ID="Button_submit" runat="server" Text="SUBMIT"  BackColor="Green" Height="30px" Width="127px" OnClick="Button_submit_Click" ForeColor="White"  /></td>
                 </tr>
             </table>
         </div>

@@ -5,8 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+    body {
+      background-image: url('~assets/images/png_background.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
 </head>
-<body /*style="background-color:black;text-align:left; height: 278px;"*/ >
+
+<body  >
     <form id="form1" runat="server">
         
         <center>
